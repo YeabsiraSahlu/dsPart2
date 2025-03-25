@@ -3,18 +3,17 @@ import sqlite3
 conn = sqlite3.connect("database.db")
 cursor = conn.cursor()
 
-cursor.execute('''
-    SELECT city, temp, timestamp
-    FROM weather
-    ORDER BY timestamp ASC
-    LIMIT 10
-''')
+cursor.execute("""
+    SELECT * FROM weather
+    WHERE timestamp LIKE '2016-03-23%'
+    LIMIT 5
+""")
 
 rows = cursor.fetchall()
-print("\n Oldest entries in weather table:")
-print("=" * 40)
-for row in rows:
-    city, temp, timestamp = row
-    print(f"City: {city}, Temp: {temp}°C, Timestamp: {timestamp}")
+if rows:
+    for row in rows:
+        print(row)
+else:
+    print(" No data found for 2016-03-23.")
 
 conn.close()

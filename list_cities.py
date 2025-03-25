@@ -6,8 +6,8 @@ cursor = conn.cursor()
 cursor.execute("SELECT DISTINCT city FROM weather")
 cities = cursor.fetchall()
 
-print(" Unique city names in database:")
+print("Cities in the database:")
 for city in cities:
-    print(f"- {city[0]}")
+    print("-", city[0])
 
 conn.close()
