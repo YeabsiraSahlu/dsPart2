@@ -26,6 +26,7 @@ This project demonstrates the development of an ETL (Extract, Transform, Load) p
 - `list_cities.py` – Lists distinct cities saved in the database.
 - `.env` – Stores the API key (excluded from version control using `.gitignore`).
 - `database.db` – SQLite database storing all ingested weather records.
+- `requirements.txt` – Lists all required Python packages to run the project.
 
 ## Features
 
